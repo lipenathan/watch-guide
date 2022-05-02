@@ -13,7 +13,7 @@ public class Serie extends Conteudo{
 
     @Override
     void notificarUsuario() {
-
+        System.out.println("Sua série ja vai começar");
     }
 
     public Integer getTemporadas() {

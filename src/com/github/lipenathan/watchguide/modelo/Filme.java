@@ -11,7 +11,7 @@ public class Filme extends Conteudo{
 
     @Override
     void notificarUsuario() {
-
+        System.out.println("Seu filme já vai começar");
     }
 
     public LocalTime getDuracao() {

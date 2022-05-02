@@ -8,7 +8,7 @@ public class Programa extends Conteudo{
 
     @Override
     void notificarUsuario() {
-
+        System.out.println("Seu programa já vai começar");
     }
 
     public LocalTime getDuracao() {

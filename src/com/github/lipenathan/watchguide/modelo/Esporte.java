@@ -7,7 +7,7 @@ public class Esporte extends Conteudo{
     private LocalTime duracaoAproximada;
     @Override
     void notificarUsuario() {
-        // metodo a ser implementado
+        System.out.println("Seu jogo já vai começar");
     }
 
     public String getPais() {
