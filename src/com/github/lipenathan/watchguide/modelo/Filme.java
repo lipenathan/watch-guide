@@ -10,7 +10,7 @@ public class Filme extends Conteudo{
     private Genero genero;
 
     @Override
-    void notificarUsuario() {
+    public void notificarUsuario() {
         System.out.println("Seu filme já vai começar");
     }
 

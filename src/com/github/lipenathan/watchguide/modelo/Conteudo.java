@@ -6,7 +6,7 @@ public abstract class Conteudo {
     private String nome;
     private String descricao;
     private LocalDateTime horario;
-    abstract void notificarUsuario();
+    public abstract void notificarUsuario();
 
     public String getNome() {
         return nome;

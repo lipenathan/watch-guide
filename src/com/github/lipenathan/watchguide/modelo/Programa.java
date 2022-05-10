@@ -7,7 +7,7 @@ public class Programa extends Conteudo{
     private Genero genero;
 
     @Override
-    void notificarUsuario() {
+    public void notificarUsuario() {
         System.out.println("Seu programa já vai começar");
     }
 

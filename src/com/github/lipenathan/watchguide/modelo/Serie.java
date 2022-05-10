@@ -12,7 +12,7 @@ public class Serie extends Conteudo{
     private Genero genero;
 
     @Override
-    void notificarUsuario() {
+    public void notificarUsuario() {
         System.out.println("Sua série ja vai começar");
     }
 
