@@ -1,0 +1,36 @@
+header {
+    position: relative;
+    top: 0;
+    height: auto;
+    width: 100%;
+}
+
+nav {
+    position: fixed;
+    top:0;
+    height: 100px;
+    width: 100%;
+    z-index: 1;
+    background-color: #565555;
+}
+
+/*.nav-bar {*/
+/*    width: 100%;*/
+/*    display: flex;*/
+/*    position: fixed;*/
+/*    background-color: #7d7dda;*/
+/*    z-index: 99;*/
+/*}*/
+
+/*.nav-bar ul a {*/
+/*    color: #fff;*/
+/*    margin: auto 20px auto 40px;*/
+/*    text-decoration: none;*/
+/*    font-weight: bold;*/
+/*}*/
+
+/*.nav-bar ul li {*/
+/*    float: left;*/
+/*    list-style: none;*/
+/*    margin-left: 20px;*/
+/*}*/
