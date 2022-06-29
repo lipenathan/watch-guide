@@ -1,36 +1,169 @@
-header {
-    position: relative;
-    top: 0;
-    height: auto;
-    width: 100%;
-}
-
-nav {
-    position: fixed;
-    top:0;
-    height: 100px;
-    width: 100%;
-    z-index: 1;
-    background-color: #565555;
-}
-
-/*.nav-bar {*/
+@import url('https://fonts.googleapis.com/css2?family=League+Gothic&display=swap');
+/*header {*/
+/*    position: relative;*/
+/*    top: 0;*/
+/*    height: auto;*/
 /*    width: 100%;*/
-/*    display: flex;*/
-/*    position: fixed;*/
-/*    background-color: #7d7dda;*/
-/*    z-index: 99;*/
 /*}*/
 
-/*.nav-bar ul a {*/
-/*    color: #fff;*/
-/*    margin: auto 20px auto 40px;*/
-/*    text-decoration: none;*/
-/*    font-weight: bold;*/
-/*}*/
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "League-Gotic", sans-serif;
+}
 
-/*.nav-bar ul li {*/
-/*    float: left;*/
-/*    list-style: none;*/
-/*    margin-left: 20px;*/
-/*}*/
+li, a, button {
+    font-weight: 400;
+    font-size: 16px;
+    color: #EDF0F1;
+    text-decoration: none;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 0;
+    height: 50px;
+    background-color: #24252A;
+    margin-right: auto;
+}
+
+body {
+    background-color: darkcyan;
+    min-height:  100vh;
+    align-items: center;
+    justify-content: center;
+}
+
+main {
+    display: flex;
+}
+
+input {
+    border-radius: 8px;
+}
+
+select{
+    border-radius: 8px;
+}
+
+button {
+    padding: 9px 25px;
+    margin: 0 30px;
+    background-color: rgba(0,35,196,1);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
+button:hover {
+    background-color: rgba(0,35,196,0.8 );
+}
+
+.nav-links {
+    list-style: none;
+}
+
+.nav-links li {
+    display: inline-block;
+    padding: 0 20px;
+}
+
+.nav-links li a {
+    transition:  all 0.3s ease 0s;
+}
+
+.nav-links li a:hover {
+    color: #0088A9;
+}
+
+.conteudo-principal {
+    margin-top: 30px;
+}
+
+.card {
+    border-radius: 25px;
+    background-color: #fff;
+}
+
+.card-image .card-img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid #4070F4;
+}
+
+.slide-content {
+    margin: 0 40px;
+}
+
+.slide-container {
+    max-width: 1120px;
+    width: 100%;
+    background-color: grey;
+    padding: 40px;
+}
+
+.image-content,
+.card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 14px;
+}
+
+.image-content {
+    position: relative;
+    row-gap: 5px;
+    border-radius: 25px 25px 0 25px;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #4070F4;
+}
+
+.card-image {
+    position: relative;
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    background: darkcyan;
+    padding: 3px;
+}
+
+.titulo {
+    font-size: 18px;
+    font-weight: 500;
+    color: #333
+}
+
+.descricao {
+    font-size: 14px;
+    color: #c7c7c7;
+    text-align: center;
+}
+
+.button {
+    border: none;
+    font-size: 16px;
+    color: #fff;
+    padding: 8px 16px;
+    background-color: #4070F4;
+    border: 6px;
+    margin: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease ;
+}
+
+.button:hover {
+    background-color: #264df2;
+}

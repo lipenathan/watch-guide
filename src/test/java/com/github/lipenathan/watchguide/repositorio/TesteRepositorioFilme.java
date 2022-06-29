@@ -16,6 +16,6 @@ public class TesteRepositorioFilme {
 
     @Test
     public void testeTipo() {
-        System.out.println(Tipo.FUTEBOL_AMERICANO.descricao);
+        System.out.println(Tipo.FUTEBOL_AMERICANO.getDescricao());
     }
 }

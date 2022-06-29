@@ -1,6 +1,6 @@
 <component name="ArtifactManager">
   <artifact type="exploded-war" name="watch-guide:Web exploded">
-    <output-path>$PROJECT_DIR$/out/artifacts/watch_guide_Web_exploded</output-path>
+    <output-path>$PROJECT_DIR$/out/artifacts/watch_guide</output-path>
     <root id="root">
       <element id="javaee-facet-resources" facet="watch-guide/web/Web" />
       <element id="directory" name="WEB-INF">

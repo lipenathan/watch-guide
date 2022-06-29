@@ -19,13 +19,11 @@ public class Conteudo implements Serializable {
     @Column(name = "horario_conteudo")
     private Date horario;
     @Column(name = "id_tipo")
-    @Enumerated(EnumType.STRING)
-    private Tipo tipoConteudo;
-    @Enumerated(EnumType.STRING)
-    @Column(name = "id_tipo")
-    private Genero genero;
+    private int tipoConteudo;
+    @Column(name = "id_genero")
+    private Integer genero = null;
     @ManyToOne(cascade = CascadeType.PERSIST, fetch = FetchType.EAGER)
-    @JoinColumn(name = "")
+    @JoinColumn(name = "id_empresa")
     private Empresa empresa = new Empresa();
 
     public void validar() throws Exception{
@@ -33,6 +31,10 @@ public class Conteudo implements Serializable {
             throw new Exception("O nome do conteúdo precisa ser preenchido");
         if (this.descricao == null || this.descricao.isEmpty())
             throw new Exception("A descrição do conteúdo precisa ser preenchido");
+    }
+
+    public boolean isStreaming() {
+        return empresa.getPreco() != 0 && empresa.getNumeroCanal() == 0;
     }
 
     public int getId() {
@@ -67,24 +69,24 @@ public class Conteudo implements Serializable {
         this.horario = horario;
     }
 
-    public Tipo getTipoConteudo() {
+    public Empresa getEmpresa() {
+        return empresa;
+    }
+
+    public int getTipoConteudo() {
         return tipoConteudo;
     }
 
-    public void setTipoConteudo(Tipo tipoConteudo) {
+    public void setTipoConteudo(int tipoConteudo) {
         this.tipoConteudo = tipoConteudo;
     }
 
-    public Genero getGenero() {
+    public Integer getGenero() {
         return genero;
     }
 
-    public void setGenero(Genero genero) {
+    public void setGenero(int genero) {
         this.genero = genero;
-    }
-
-    public Empresa getEmpresa() {
-        return empresa;
     }
 
     public void setEmpresa(Empresa empresa) {

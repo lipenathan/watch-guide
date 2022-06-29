@@ -7,10 +7,10 @@ public enum Tipo {
     FILME(1, "FILME"), SERIE(2, "SERIE"), MINISSERIE(3, "MINISSERIE") ,
     PROGRAMA(4, "PROGRAMA"), BASQUETE(5, "BASQUETE"), FUTEBOL(6, "FUTEBOL"),
     FUTEBOL_AMERICANO(7, "FUTEBOL AMERICANO"), TENIS(8, "TENIS"), REALITY_SHOW(9, "REALITY SHOW"),
-    NOVELA(10, "NOVELA"), TELEJORNALISMO(11, "TELEJORNALISMO");
+    NOVELA(10, "NOVELA"), TELEJORNALISMO(11, "TELEJORNALISMO"), NENHUM(0, "SEM TIPO");
 
-    public int id;
-    public String descricao;
+    private int id;
+    private String descricao;
 
     Tipo(int id, String descricao) {
         this.id = id;
@@ -41,7 +41,7 @@ public enum Tipo {
                 return NOVELA;
             case 11:
                 return TELEJORNALISMO;
-            default: return null;
+            default: return NENHUM;
         }
     }
 
@@ -54,15 +54,7 @@ public enum Tipo {
         return id;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
     public String getDescricao() {
         return descricao;
-    }
-
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
     }
 }

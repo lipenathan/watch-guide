@@ -1,7 +1,8 @@
 package com.github.lipenathan.watchguide.dao;
 
-import jakarta.persistence.EntityManager;
-import jakarta.persistence.Persistence;
+
+import javax.persistence.EntityManager;
+import javax.persistence.Persistence;
 
 public class FabricaEntityManager {
 
