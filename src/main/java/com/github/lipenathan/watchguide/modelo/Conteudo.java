@@ -25,6 +25,7 @@ public class Conteudo implements Serializable {
     @ManyToOne(cascade = CascadeType.PERSIST, fetch = FetchType.EAGER)
     @JoinColumn(name = "id_empresa")
     private Empresa empresa = new Empresa();
+    private String imagem;
 
     public void validar() throws Exception{
         if (this.nome == null || this.nome.isEmpty())
@@ -91,5 +92,13 @@ public class Conteudo implements Serializable {
 
     public void setEmpresa(Empresa empresa) {
         this.empresa = empresa;
+    }
+
+    public String getImagem() {
+        return imagem;
+    }
+
+    public void setImagem(String imagem) {
+        this.imagem = imagem;
     }
 }

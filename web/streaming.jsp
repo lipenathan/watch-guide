@@ -59,24 +59,28 @@
 <%--            } %>--%>
 <%--        </tr>--%>
 <%--    </table>--%>
+        <%
+            ConteudoFrm frm = new ConteudoFrm();
+            List<Conteudo> conteudos = frm.conteudoStreaming();%>
     <div class="slide-container swiper">
         <div class="slide-content">
             <div class="card-wrapper swiper-wrapper">
-                <div class="card swiper-slide">
-                    <div class="image-content">
-                        <span class="overlay"></span>
-
-                        <div class="card-image">
-                            <img src="resources/images/stranger_things.jpg" alt="teste" class="card-img">
-                        </div>
-
-                    </div>
-                    <div class="card-content">
-                        <h2 class="titulo">Exemplo</h2>
-                        <p class="descricao">Este é um exemplo de descrição que ja ja será usado com jsp</p>
-                        <button class="button">View More</button>
-                    </div>
-                </div>
+            <% for (Conteudo conteudo : conteudos) {
+                            out.print("<div class=\"card swiper-slide\">");
+                            out.print("<div class=\"image-content\">");
+                            out.print("<span class=\"overlay\"></span>");
+                            out.print("<span class=\"overlay\"></span>");
+                            out.print("<div class=\"card-image\">");
+                            out.print("<img src=\"" + conteudo.getImagem() + "\" alt=\""+ conteudo.getImagem() +"\" class=\"card-img\">");
+                            out.print("</div>");
+                            out.print("</div>");
+                            out.print("<div class=\"card-content\">");
+                            out.print("<h2 class=\"titulo\">" + conteudo.getNome() + "</h2>");
+                            out.print("<p class=\"descricao\">" + conteudo.getDescricao() + "</p>");
+                            out.print("<button class=\"button\">Detalhes</button>");
+                            out.print("</div>");
+                            out.print("</div>");
+                        } %>
             </div>
         </div>
         <div class="swiper-button-next"></div>
