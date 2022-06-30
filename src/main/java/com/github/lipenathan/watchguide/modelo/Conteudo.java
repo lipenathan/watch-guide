@@ -25,7 +25,7 @@ public class Conteudo implements Serializable {
     @ManyToOne(cascade = CascadeType.PERSIST, fetch = FetchType.EAGER)
     @JoinColumn(name = "id_empresa")
     private Empresa empresa = new Empresa();
-    private String imagem;
+    private String imagem = "resources/images/semimagem.jpg";
 
     public void validar() throws Exception{
         if (this.nome == null || this.nome.isEmpty())

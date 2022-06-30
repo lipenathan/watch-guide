@@ -15,7 +15,7 @@
 </!doctype html>
 <html>
 <head>
-    <title>Novos Conteúdos</title>
+    <title>Novo Conteúdo</title>
     <meta charset="charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="resources/css/style.css">
@@ -25,12 +25,12 @@
     <nav>
         <ul class="nav-links">
             <li><a href="cadastro_conteudo.jsp">Cadastrar Conteúdo</a></li>
-            <li><a href="programacao.jsp">Programação</a></li>
+            <li><a href="tv.jsp">TV</a></li>
             <li><a href="streaming.jsp">Streamings</a></li>
         </ul>
     </nav>
-    <a class="login" href="#">
-        <button>Login</button>
+    <a class="login" href="streaming.jsp">
+        <button>Watch Guide</button>
     </a>
 </header>
 <main>
@@ -41,28 +41,28 @@
             CadastroConteudoFrm frm = new CadastroConteudoFrm();
         %>
         <label for="empresa">Escolha a Empresa</label>
-        <select name="empresa" id="empresa" onclick="<%frm.teste();%>">
+        <select name="nomeEmpresa" id="empresa">
             <option value="" disabled selected>Selecione uma empresa</option>
             <% for (Empresa empresa : empresas) {
                 out.print("<option value=\"" + empresa.getId() + "\">" + empresa.getNome() + "</option>");
             }
                 ; %>
         </select>
-        <form method="post" action="formCadastrar">
+        <form method="post" action="formCadastrar" enctype="multipart/form-data">
             <h2>Empresa</h2>
             <label for="nomeEmpresa">Nome empresa</label>
-            <input id="nomeEmpresa" type="text" name="nomeEmpresa"/>
+            <input id="nomeEmpresa" type="text" name="nomeEmpresa"/><br/>
             <label for="numeroCanal">Número canal</label>
-            <input id="numeroCanal" type="text" name="numeroCanal"/>
+            <input id="numeroCanal" type="text" name="numeroCanal"/><br/>
             <label for="preco">Preço Streaming</label>
-            <input id="preco" type="text" name="preco"/><br/>
+            <input id="preco" type="text" name="preco"/><br/><br/>
             <h2>Conteúdo</h2>
             <label for="nome">Título</label>
-            <input id="nome" type="text" name="nome" placeholder="Título do conteúdo"/>
+            <input id="nome" type="text" name="nome" placeholder="Título do conteúdo"/><br/>
             <label for="descricao">Descrição</label>
-            <input id="descricao" type="text" name="descricao" placeholder="Descrição do conteúdo"/>
+            <input id="descricao" type="text" name="descricao" placeholder="Descrição do conteúdo"/><br/>
             <label for="horario">Horário</label>
-            <input id="horario" type="datetime-local" name="horario" placeholder="Horário do conteúdo"/>
+            <input id="horario" type="datetime-local" name="horario" placeholder="Horário do conteúdo"/><br/>
             <%
                 List<Tipo> comboTipos = Tipo.todos();
             %>
@@ -73,7 +73,7 @@
                     out.print("<option value=\"" + tipo.getId() + "\">" + tipo.getDescricao() + "</option>");
                 }
                     ; %>
-            </select>
+            </select><br/>
             <%
                 List<Genero> comboGenero = Genero.todos();
             %>
@@ -84,10 +84,22 @@
                     out.print("<option value=\"" + genero.getId() + "\">" + genero.getDescricao() + "</option>");
                 }
                     ; %>
-            </select>
+            </select><br/>
+            <input type="file"
+                   id="img" name="img"
+                   accept="image/png, image/jpeg">
+            <br/>
             <input type="submit" value="Cadastrar">
         </form>
     </div>
 </main>
 </body>
+<script>
+    const iptEmpresa = document.getElementById('nomeEmpresa')
+    iptEmpresa.ariaDisabled = true
+    const iptNumeroCanal = document.getElementById('numeroCanal')
+    iptNumeroCanal.ariaDisabled = true
+    const iptPreco = document.getElementById('preco')
+    iptPreco.ariaDisabled = true
+</script>
 </html>

@@ -15,7 +15,7 @@
 </!doctype html>
 <html>
 <head>
-    <title>Streaming</title>
+    <title>TV</title>
     <meta charset="charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="resources/css/style.css">
@@ -37,7 +37,7 @@
 <main>
     <%
         ConteudoFrm frm = new ConteudoFrm();
-        List<Conteudo> conteudos = frm.conteudoStreaming();%>
+        List<Conteudo> conteudos = frm.conteudoCanais();%>
     <div class="slide-container swiper">
         <div class="slide-content">
             <div class="card-wrapper swiper-wrapper">
@@ -53,6 +53,7 @@
                     out.print("<div class=\"card-content\">");
                     out.print("<h2 class=\"titulo\">" + conteudo.getNome() + "</h2>");
                     out.print("<p class=\"descricao\">" + conteudo.getDescricao() + "</p>");
+                    out.print("<p>Horário:" + conteudo.getHorario() + "</p>");
                     out.print("<p>Tipo:" + Tipo.getTipoById(conteudo.getTipoConteudo()).getDescricao() + "</p>");
                     out.print("<p>Gênero:" + Genero.getGeneroById(conteudo.getGenero() == null? 0 : conteudo.getGenero()).getDescricao() + "</p>");
                     out.print("</div>");
